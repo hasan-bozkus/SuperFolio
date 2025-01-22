@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Experience
+    public class Message
     {
         [Key]
-        public int ExperienceID { get; set; }
+        public int MesasgeID { get; set; }
         public string Name { get; set; }
-        public string Date { get; set; }
-        public string ImageUrl { get; set; }
-        public string Description { get; set; }
+        public string Email { get; set; }
+        public string Content { get; set; }
+        public DateTime Date { get; set; }
+        public bool Status { get; set; }
     }
 }

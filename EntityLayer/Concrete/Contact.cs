@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Skill
+    public class Contact
     {
         [Key]
-        public int SkillID { get; set; }
+        public int ContactID { get; set; }
         public string Title { get; set; }
-        public string Value { get; set; }
+        public string Description { get; set; }
+        public string EMail { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

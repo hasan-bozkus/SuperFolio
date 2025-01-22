@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Experience
+    public class SocialMedia
     {
         [Key]
-        public int ExperienceID { get; set; }
+        public int SocialMediaID { get; set; }
         public string Name { get; set; }
-        public string Date { get; set; }
-        public string ImageUrl { get; set; }
-        public string Description { get; set; }
+        public string Url { get; set; }
+        public string Icon { get; set; }
+        public bool Status { get; set; }
     }
 }
