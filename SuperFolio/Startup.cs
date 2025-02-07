@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinnesLayer.Abstract;
+using BusinnesLayer.Concrete;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +28,33 @@ namespace SuperFolio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IFeatureService, FeatureManager>();
+            services.AddScoped<IFeatureDal, EFFeatureDal>();
+
+            services.AddScoped<IAboutService, AboutManager>();
+            services.AddScoped<IAboutDal, EFAboutDal>();
+
+            services.AddScoped<IServiceService, ServiceManager>();
+            services.AddScoped<IServiceDal, EFServiceDal>();
+
+            services.AddScoped<ISkillService, SkillManager>();
+            services.AddScoped<ISkillDal, EFSkillDal>();
+
+            services.AddScoped<IPortfolioService, PortfolioManager>();
+            services.AddScoped<IPortfolioDal, EFPortfolioDal>();
+
+            services.AddScoped<IExperienceService, ExperienceManager>();
+            services.AddScoped<IExperienceDal, EFExprienceDal>();
+
+            services.AddScoped<ITestimonialService, TestimonialManager>();
+            services.AddScoped<ITestimonialDal, EFTestimonialDal>();
+
+            services.AddScoped<IContactService, ContactManager>();
+            services.AddScoped<IContactDal, EFContactDal>();
+
+            services.AddScoped<IMessageService, MessageManager>();
+            services.AddScoped<IMessageDal, EFMessageDal>();
+
             services.AddControllersWithViews();
         }
 

@@ -12,6 +12,12 @@ namespace BusinnesLayer.Concrete
     public class ContactManager : IContactService
     {
         private readonly IContactDal _contactDal;
+
+        public ContactManager(IContactDal contactDal)
+        {
+            _contactDal = contactDal;
+        }
+
         public void TAdd(Contact entity)
         {
             _contactDal.Insert(entity);

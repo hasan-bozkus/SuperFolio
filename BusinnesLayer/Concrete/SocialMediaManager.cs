@@ -12,6 +12,12 @@ namespace BusinnesLayer.Concrete
     public class SocialMediaManager : ISocialMediaService
     {
         private readonly ISocialMediaDal _socialMediaDal;
+
+        public SocialMediaManager(ISocialMediaDal socialMediaDal)
+        {
+            _socialMediaDal = socialMediaDal;
+        }
+
         public void TAdd(SocialMedia entity)
         {
             _socialMediaDal.Insert(entity);
