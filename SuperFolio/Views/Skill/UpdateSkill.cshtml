@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.Skill
+@{
+    ViewData["Title"] = "UpdateSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <!-- Card header -->
+    <div class="card-header border-0">
+        <h3 class="mb-0">Yeni Yetenek Ekleme Girişi</h3>
+    </div>
+    <div class="card-body">
+        <form method="post">
+
+            <input type="hidden" asp-for="SkillID" />
+
+            <label>Yetenek Başlığı</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <br />
+            <label>Değer</label>
+            <input type="text" asp-for="Value" class="form-control" />
+            <br />
+            <button class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.Skill
+@{
+    ViewData["Title"] = "AddSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card">
+    <!-- Card header -->
+    <div class="card-header border-0">
+        <h3 class="mb-0">Yetenek Düzenleme Sayfası</h3>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <label>Yetenek Başlığı</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <br />
+            <label>Değer</label>
+            <input type="text" asp-for="Value" class="form-control" />
+            <br />
+            <button class="btn btn-success">Kaydet</button>
+        </form>
+    </div>
+</div>
