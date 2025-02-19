@@ -1,6 +1,9 @@
 ﻿using BusinnesLayer.Abstract;
+using BusinnesLayer.ValidationRules;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace SuperFolio.Controllers
 {
@@ -34,8 +37,21 @@ namespace SuperFolio.Controllers
         [HttpPost]
         public IActionResult AddPortfolio(Portfolio portfolio)
         {
-            _portfolioService.TAdd(portfolio);
-            return RedirectToAction("Index");
+            PortfolioValidator validations = new PortfolioValidator();
+            ValidationResult results = validations.Validate(portfolio);
+            if (results.IsValid)
+            {
+                _portfolioService.TAdd(portfolio);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
 
         public IActionResult DeletePortfolio(int id)
@@ -58,8 +74,21 @@ namespace SuperFolio.Controllers
         [HttpPost]
         public IActionResult UpdatePortfolio(Portfolio portfolio)
         {
-            _portfolioService.TUpdate(portfolio);
-            return RedirectToAction("Index");
+            PortfolioValidator validations = new PortfolioValidator();
+            ValidationResult results = validations.Validate(portfolio);
+            if (results.IsValid)
+            {
+                _portfolioService.TUpdate(portfolio);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
     }
 }
