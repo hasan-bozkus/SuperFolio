@@ -55,6 +55,8 @@ namespace SuperFolio
             services.AddScoped<IMessageService, MessageManager>();
             services.AddScoped<IMessageDal, EFMessageDal>();
 
+            services.AddScoped<Context>();
+
             services.AddControllersWithViews();
         }
 

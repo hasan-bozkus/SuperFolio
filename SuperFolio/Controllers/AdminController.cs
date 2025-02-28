@@ -33,5 +33,10 @@ namespace SuperFolio.Controllers
         {
             return PartialView();
         }
+
+        public PartialViewResult NewSidebar()
+        {
+            return PartialView();
+        }
     }
 }
