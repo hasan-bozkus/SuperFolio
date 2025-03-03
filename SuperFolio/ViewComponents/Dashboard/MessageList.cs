@@ -5,16 +5,16 @@ namespace SuperFolio.ViewComponents.Dashboard
 {
     public class MessageList : ViewComponent
     {
-        private readonly IMessageService _messageService;
+        private readonly IUserMessageService _userMessageService;
 
-        public MessageList(IMessageService messageService)
+        public MessageList(IUserMessageService userMessageService)
         {
-            _messageService = messageService;
+            _userMessageService = userMessageService;
         }
 
         public IViewComponentResult Invoke()
         {
-            var values = _messageService.TGetList();
+            var values = _userMessageService.TGetUserMessagesWithUser();
             return View(values);
         }
     }

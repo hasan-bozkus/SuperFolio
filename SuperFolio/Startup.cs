@@ -55,6 +55,15 @@ namespace SuperFolio
             services.AddScoped<IMessageService, MessageManager>();
             services.AddScoped<IMessageDal, EFMessageDal>();
 
+            services.AddScoped<IUserService, UserManager>();
+            services.AddScoped<IUserDal, EFUserDal>();
+
+            services.AddScoped<IUserMessageService, UserMessageManager>();
+            services.AddScoped<IUserMessageDal, EFUserMessageDal>();
+
+            services.AddScoped<IToDoListService, ToDoListManager>();
+            services.AddScoped<IToDoListDal, EFToDoListDal>();
+
             services.AddScoped<Context>();
 
             services.AddControllersWithViews();
