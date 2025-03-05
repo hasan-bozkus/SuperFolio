@@ -88,7 +88,8 @@ namespace SuperFolio
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthorization();
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -100,9 +101,10 @@ namespace SuperFolio
                     pattern: "{controller=Default}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
-                    name: "areas",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}");
             });
+
         }
     }
 }
