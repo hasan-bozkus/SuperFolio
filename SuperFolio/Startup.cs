@@ -68,6 +68,9 @@ namespace SuperFolio
             services.AddScoped<IToDoListService, ToDoListManager>();
             services.AddScoped<IToDoListDal, EFToDoListDal>();
 
+            services.AddScoped<IAnnouncementService, AnnouncementManager>();
+            services.AddScoped<IAnnouncementDal, EFAnnouncementDal>();
+
             services.AddScoped<Context>();
 
             services.AddControllersWithViews();
