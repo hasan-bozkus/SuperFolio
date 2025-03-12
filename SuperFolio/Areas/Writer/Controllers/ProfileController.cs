@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace SuperFolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("/[area]/[controller]/[action]/{id?}")]
     public class ProfileController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
@@ -46,6 +47,10 @@ namespace SuperFolio.Areas.Writer.Controllers
 
             user.Name = userEditViewModel.Name;
             user.Surname = userEditViewModel.Surname;
+            if (userEditViewModel.Password != null)
+            {
+                user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, userEditViewModel.Password);
+            }
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {

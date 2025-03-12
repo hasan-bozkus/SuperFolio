@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,11 @@ namespace BusinnesLayer.Concrete
         public void TDelete(Contact entity)
         {
             _contactDal.Delete(entity);
+        }
+
+        public List<Contact> TGetbyFilter(string p)
+        {
+            throw new NotImplementedException();
         }
 
         public Contact TGetByID(int id)

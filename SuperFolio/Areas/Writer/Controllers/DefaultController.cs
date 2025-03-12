@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace SuperFolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("/[area]/[controller]/[action]/{id?}")]
     [Authorize]
-    //[Route("[area]/[controller]/[action]")] 
     public class DefaultController : Controller
     {
         private readonly IAnnouncementService _announcementService;

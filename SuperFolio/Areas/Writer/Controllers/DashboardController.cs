@@ -9,6 +9,7 @@ using System.Xml.Linq;
 namespace SuperFolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("/[area]/[controller]/[action]/{id?}")]
     public class DashboardController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
@@ -32,7 +33,7 @@ namespace SuperFolio.Areas.Writer.Controllers
 
             //statistics
             Context context = new Context();
-            ViewBag.MessageCount = 0;
+            ViewBag.MessageCount = context.WriterMessages.Where(x => x.Receiver == values.Email).Count();
             ViewBag.NotificationCount = context.Announcements.Count();
             ViewBag.TotalUserCount = context.Users.Count();
             ViewBag.TotalSkillCount = context.Skills.Count();

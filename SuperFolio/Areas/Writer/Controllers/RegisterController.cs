@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace SuperFolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("/[area]/[controller]/[action]")]
     public class RegisterController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;

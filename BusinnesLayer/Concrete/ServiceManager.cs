@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,11 @@ namespace BusinnesLayer.Concrete
         public void TDelete(Service entity)
         {
             _serviceDal.Delete(entity);
+        }
+
+        public List<Service> TGetbyFilter(string p)
+        {
+            throw new NotImplementedException();
         }
 
         public Service TGetByID(int id)

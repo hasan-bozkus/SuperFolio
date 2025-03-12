@@ -59,17 +59,14 @@ namespace SuperFolio
             services.AddScoped<IMessageService, MessageManager>();
             services.AddScoped<IMessageDal, EFMessageDal>();
 
-            services.AddScoped<IUserService, UserManager>();
-            services.AddScoped<IUserDal, EFUserDal>();
-
-            services.AddScoped<IUserMessageService, UserMessageManager>();
-            services.AddScoped<IUserMessageDal, EFUserMessageDal>();
-
             services.AddScoped<IToDoListService, ToDoListManager>();
             services.AddScoped<IToDoListDal, EFToDoListDal>();
 
             services.AddScoped<IAnnouncementService, AnnouncementManager>();
             services.AddScoped<IAnnouncementDal, EFAnnouncementDal>();
+
+            services.AddScoped<IWriterMessageService, WriterMessageManager>();
+            services.AddScoped<IWriterMesasgeDal, EFWriterMessageDal>();
 
             services.AddScoped<Context>();
 
@@ -100,12 +97,13 @@ namespace SuperFolio
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Default}/{action=Index}/{id?}");
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
 
                 endpoints.MapControllerRoute(
-                  name: "areas",
-                  pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}");
+                    name: "default",
+                    pattern: "{controller=Default}/{action=Index}/{id?}");
             });
 
         }

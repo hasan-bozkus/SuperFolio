@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace SuperFolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("/[area]/[controller]/[action]")]
     public class LoginController : Controller
     {
         private readonly SignInManager<WriterUser> _signInManager;
@@ -31,7 +32,7 @@ namespace SuperFolio.Areas.Writer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(userLoginViewModel.UserName, userLoginViewModel.Password, true, true);
                 if(result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Default");
+                    return RedirectToAction("Index", "Dashboard");
                 }
                 else
                 {
@@ -40,6 +41,12 @@ namespace SuperFolio.Areas.Writer.Controllers
             }
 
             return View();
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,5 +14,6 @@ namespace BusinnesLayer.Abstract
         void TDelete(T entity);
         List<T> TGetList();
         T TGetByID(int id);
+        List<T> TGetbyFilter(string p);
     }
 }
