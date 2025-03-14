@@ -29,7 +29,7 @@ namespace BusinnesLayer.Concrete
             _testimonialDal.Delete(entity);
         }
 
-        public List<Testimonial> TGetbyFilter(string p)
+        public List<Testimonial> TGetbyFilter()
         {
             throw new NotImplementedException();
         }

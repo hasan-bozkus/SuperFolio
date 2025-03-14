@@ -29,9 +29,9 @@ namespace BusinnesLayer.Concrete
             _writerMesasgeDal.Delete(entity);
         }
 
-        public List<WriterMessage> TGetbyFilter(string p)
+        public List<WriterMessage> TGetbyFilter()
         {
-            return _writerMesasgeDal.GetbyFilter(x=> x.Receiver == p);
+            throw new NotImplementedException();
         }
 
         public WriterMessage TGetByID(int id)

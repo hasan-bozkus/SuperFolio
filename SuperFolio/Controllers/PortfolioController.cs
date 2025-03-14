@@ -18,9 +18,6 @@ namespace SuperFolio.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.v1 = "Portfölyolar";
-            ViewBag.v2 = "Portfölyolar";
-            ViewBag.v3 = "Portfölyolar ";
             var values = _portfolioService.TGetList();
             return View(values);
         }
@@ -28,9 +25,6 @@ namespace SuperFolio.Controllers
         [HttpGet]
         public IActionResult AddPortfolio()
         {
-            ViewBag.v1 = "Portfölyo Ekleme";
-            ViewBag.v2 = "Portfölyolar";
-            ViewBag.v3 = "Portfölyo Ekleme";
             return View();
         }
 
@@ -64,9 +58,6 @@ namespace SuperFolio.Controllers
         [HttpGet]
         public IActionResult UpdatePortfolio(int id)
         {
-            ViewBag.v1 = "Güncelleme";
-            ViewBag.v2 = "Portfölyolar";
-            ViewBag.v3 = "Portfölyo Güncelleme";
             var values = _portfolioService.TGetByID(id);
             return View(values);
         }

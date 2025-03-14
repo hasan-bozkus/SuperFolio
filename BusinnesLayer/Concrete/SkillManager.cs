@@ -29,7 +29,7 @@ namespace BusinnesLayer.Concrete
             _skillDal.Delete(entity);
         }
 
-        public List<Skill> TGetbyFilter(string p)
+        public List<Skill> TGetbyFilter()
         {
             throw new NotImplementedException();
         }

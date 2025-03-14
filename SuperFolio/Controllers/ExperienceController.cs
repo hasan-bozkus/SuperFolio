@@ -15,9 +15,6 @@ namespace SuperFolio.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.v1 = "Deneyimler";
-            ViewBag.v2 = "Deneyimler";
-            ViewBag.v3 = "Deneyimler";
             var values = _experienceService.TGetList();
             return View(values);
         }
@@ -25,9 +22,6 @@ namespace SuperFolio.Controllers
         [HttpGet]
         public IActionResult AddExperience()
         {
-            ViewBag.v1 = "Deneyim Ekleme";
-            ViewBag.v2 = "Deneyimler";
-            ViewBag.v3 = "Deneyim Ekleme";
             return View();
         }
 
@@ -48,9 +42,6 @@ namespace SuperFolio.Controllers
         [HttpGet]
         public IActionResult EditExperience(int id)
         {
-            ViewBag.v1 = "Güncelleme";
-            ViewBag.v2 = "Deneyimler";
-            ViewBag.v3 = "Deneyim GÜncelleme";
             var values = _experienceService.TGetByID(id);
             return View(values);
         }

@@ -16,9 +16,6 @@ namespace SuperFolio.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.v1 = "Güncelleme";
-            ViewBag.v2 = "Öne Çıkanlar";
-            ViewBag.v3 = "Öne Çıkanlar Güncelleme";
             var values = _featureService.TGetByID(1);
             return View(values);
         }

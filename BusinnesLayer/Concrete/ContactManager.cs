@@ -29,7 +29,7 @@ namespace BusinnesLayer.Concrete
             _contactDal.Delete(entity);
         }
 
-        public List<Contact> TGetbyFilter(string p)
+        public List<Contact> TGetbyFilter()
         {
             throw new NotImplementedException();
         }

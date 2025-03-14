@@ -29,7 +29,7 @@ namespace BusinnesLayer.Concrete
             _aboutDay.Delete(entity);
         }
 
-        public List<About> TGetbyFilter(string p)
+        public List<About> TGetbyFilter()
         {
             throw new NotImplementedException();
         }

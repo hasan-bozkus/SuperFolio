@@ -1,0 +1,47 @@
+﻿@model WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mesaj Detay Sayfası</h4>
+                <form class="forms-sample">
+
+                    <input type="hidden" asp-for="WriterMessageID" />
+
+                    <div class="form-group">
+                        <label for="exampleInputName1">Gönderen Adı Soyadı</label>
+                        <input type="text" asp-for="SenderName" class="form-control" id="exampleInputName1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputName1">Gönderen E-Posta</label>
+                        <input type="text" asp-for="Sender" class="form-control" id="exampleInputName1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputName1">Konu</label>
+                        <input type="text" asp-for="Subject" class="form-control" id="exampleInputName1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputDate2">Tarih</label>
+                        <input type="datetime" value="@(((DateTime)Model.Date).ToString("dd MMM yyyy"))" class="form-control" id="exampleInputDate2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Mesajı</label>
+                        <textarea asp-for="MessageContent" rows="6" class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                    </div>
+                    <a asp-action="ReceiverMessageList" class="btn btn-primary mr-2">Admin Gelen Mesajlar</a>
+                    <a asp-action="SenderMessageList" class="btn btn-warning mr-2">Admin Giden Mesajlar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

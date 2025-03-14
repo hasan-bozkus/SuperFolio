@@ -29,7 +29,7 @@ namespace BusinnesLayer.Concrete
             _announcementDal.Delete(entity);
         }
 
-        public List<Announcement> TGetbyFilter(string p)
+        public List<Announcement> TGetbyFilter()
         {
             throw new NotImplementedException();
         }

@@ -1,0 +1,42 @@
+﻿@model Message
+@{
+    ViewData["Title"] = "ContactDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+//devmaını sonra getir
+
+<div class="row">
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">İletişim Talebi Detay Sayfası</h4>
+                <form class="forms-sample">
+
+                    <input type="hidden" asp-for="MesasgeID" />
+
+                    <div class="form-group">
+                        <label for="exampleInputName1">Gönderen Adı Soyadı</label>
+                        <input type="text" asp-for="Name" class="form-control" id="exampleInputName1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputName1">Gönderen E-Posta</label>
+                        <input type="text" asp-for="Name" class="form-control" id="exampleInputName1">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputDate2">Tarih</label>
+                        <input type="datetime" value="@(((DateTime)Model.Date).ToString("dd MMM yyyy"))" class="form-control" id="exampleInputDate2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Mesajı</label>
+                        <textarea asp-for="Content" rows="6" class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                    </div>
+                    <a asp-action="Index" class="btn btn-primary mr-2">İletişim Sayfası</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,6 +14,6 @@ namespace BusinnesLayer.Abstract
         void TDelete(T entity);
         List<T> TGetList();
         T TGetByID(int id);
-        List<T> TGetbyFilter(string p);
+        List<T> TGetbyFilter();
     }
 }

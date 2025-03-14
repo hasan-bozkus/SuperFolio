@@ -1,0 +1,36 @@
+﻿@model WriterMessage
+@{
+    ViewData["Title"] = "AddMessage";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Mesaj Gönderme Paneli</h4>
+                <form method="post" class="forms-sample">
+
+                    <div class="form-group">
+                        <label for="exampleInputName1">Konu</label>
+                        <input type="text" asp-for="Subject" class="form-control" id="exampleInputName1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputName1">Alıcı</label>
+                        <input type="text" asp-for="Receiver" class="form-control" id="exampleInputName1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Mesajınız</label>
+                        <textarea asp-for="MessageContent" rows="6" class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                    </div>
+                    <button class="btn btn-primary mr-2">Kaydet</button>
+                    <a href="/Experience/Index/" class="btn btn-dark">İptal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

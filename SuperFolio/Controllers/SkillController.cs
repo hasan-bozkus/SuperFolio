@@ -15,9 +15,6 @@ namespace SuperFolio.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.v1 = "Yetenek Listesi";
-            ViewBag.v2 = "Yetenek Listesi";
-            ViewBag.v3 = "Yetenek Listesi";
             var values = _skillService.TGetList();
             return View(values);
         }
@@ -25,9 +22,6 @@ namespace SuperFolio.Controllers
         [HttpGet]
         public IActionResult AddSkill()
         {
-            ViewBag.v1 = "Yetenek Ekleme";
-            ViewBag.v2 = "Yetenekler";
-            ViewBag.v3 = "Yetenek Ekleme";
             return View();
         }
 
@@ -48,9 +42,6 @@ namespace SuperFolio.Controllers
         [HttpGet]
         public IActionResult UpdateSkill(int id)
         {
-            ViewBag.v1 = "Güncelleme";
-            ViewBag.v2 = "Yetenekler";
-            ViewBag.v3 = "Yetenek Güncelleme";
             var values = _skillService.TGetByID(id);
             return View(values);
         }

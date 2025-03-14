@@ -15,9 +15,6 @@ namespace SuperFolio.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.v1 = "Servis Listesi";
-            ViewBag.v2 = "Servis Listesi";
-            ViewBag.v3 = "Servis Listesi";
             var values = _serviceService.TGetList();
             return View(values);
         }
@@ -25,9 +22,6 @@ namespace SuperFolio.Controllers
         [HttpGet]
         public IActionResult AddService()
         {
-            ViewBag.v1 = "Servis Ekleme";
-            ViewBag.v2 = "Servisler";
-            ViewBag.v3 = "Servis Ekleme";
             return View();
         }
 
@@ -48,9 +42,6 @@ namespace SuperFolio.Controllers
         [HttpGet]
         public IActionResult UpdateService(int id)
         {
-            ViewBag.v1 = "Güncelleme";
-            ViewBag.v2 = "Servisler";
-            ViewBag.v3 = "Servis Güncelleme";
             var values = _serviceService.TGetByID(id);
             return View(values);
         }

@@ -29,7 +29,7 @@ namespace BusinnesLayer.Concrete
             _socialMediaDal.Delete(entity);
         }
 
-        public List<SocialMedia> TGetbyFilter(string p)
+        public List<SocialMedia> TGetbyFilter()
         {
             throw new NotImplementedException();
         }

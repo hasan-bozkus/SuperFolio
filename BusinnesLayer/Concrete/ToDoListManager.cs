@@ -29,7 +29,7 @@ namespace BusinnesLayer.Concrete
             _toDoListDal.Delete(entity);
         }
 
-        public List<ToDoList> TGetbyFilter(string p)
+        public List<ToDoList> TGetbyFilter()
         {
             throw new NotImplementedException();
         }
