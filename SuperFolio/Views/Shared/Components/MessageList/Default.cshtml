@@ -1,5 +1,4 @@
-﻿@* @model List<>
- *@
+﻿
 <div class="col-md-6 col-xl-4 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -7,25 +6,25 @@
                 <h4 class="card-title">Mesajlar</h4>
                 <p class="text-muted mb-1 small">Tümünü Göster</p>
             </div>
-          @*   <div class="preview-list">
+            <div class="preview-list">
                 @foreach (var item in Model)
                 {
                     <div class="preview-item border-bottom">
                         <div class="preview-thumbnail">
-                            <img src="@item.User.ImageUrl" alt="image" class="rounded-circle" />
+                            <img src="~/userimage/@ViewBag.senderImage" alt="image" class="rounded-circle" />
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                             <div class="flex-grow">
                                 <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                                    <h6 class="preview-subject"> @item.User.UserName </h6>
-                                    <p class="text-muted text-small">@item.Date</p>
+                                    <h6 class="preview-subject"> @item.SenderName </h6>
+                                    <p class="text-muted text-small">@(((DateTime)item.Date).ToString("dd MMM yyyy"))</p>
                                 </div>
-                                <p class="text-muted">@item.Content.Substring(0, 30)...</p>
+                                <p class="text-muted">@item.MessageContent ...</p>
                             </div>
                         </div>
                     </div>
                 }
-            </div> *@
+            </div> 
         </div>
     </div>
 </div>

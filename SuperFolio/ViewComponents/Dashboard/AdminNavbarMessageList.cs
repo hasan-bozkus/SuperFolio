@@ -1,17 +1,22 @@
 ﻿using BusinnesLayer.Abstract;
 using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SuperFolio.ViewComponents.Dashboard
 {
-    public class MessageList : ViewComponent
+    public class AdminNavbarMessageList : ViewComponent
     {
         private readonly IWriterMessageService _writerMessageService;
+        private readonly UserManager<WriterUser> _userManager;
 
-        public MessageList(IWriterMessageService writerMessageService)
+        public AdminNavbarMessageList(IWriterMessageService writerMessageService, UserManager<WriterUser> userManager)
         {
             _writerMessageService = writerMessageService;
+            _userManager = userManager;
         }
 
         public IViewComponentResult Invoke()
