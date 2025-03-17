@@ -68,6 +68,12 @@ namespace SuperFolio
             services.AddScoped<IWriterMessageService, WriterMessageManager>();
             services.AddScoped<IWriterMesasgeDal, EFWriterMessageDal>();
 
+            services.AddScoped<IContactService, ContactManager>();
+            services.AddScoped<IContactDal, EFContactDal>();
+
+            services.AddScoped<ISocialMediaService, SocialMediaManager>();
+            services.AddScoped<ISocialMediaDal, EFSocialMediaDal>();
+
             services.AddScoped<Context>();
 
             services.AddControllersWithViews();

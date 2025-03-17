@@ -1,0 +1,36 @@
+﻿@model SocialMedia
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hesap Düzenleme Paneli</h4>
+                <form method="post" class="forms-sample">
+
+                    <input type="hidden" asp-for="SocialMediaID" />
+
+                    <div class="form-group">
+                        <label for="exampleInputName1">Hesap Adı</label>
+                        <input type="text" asp-for="Name" class="form-control" id="exampleInputName1">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputDate2">İkon</label>
+                        <input type="text" asp-for="Icon" class="form-control" id="exampleInputDate2">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputImageUrl3">Sosyal Medya Linki</label>
+                        <input type="text" asp-for="Url" class="form-control" id="exampleInputImageUrl3">
+                    </div>
+
+                    <button class="btn btn-primary mr-2">Kaydet</button>
+                    <a href="/Experience/Index/" class="btn btn-dark">İptal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
