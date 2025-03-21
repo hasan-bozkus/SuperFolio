@@ -1,10 +1,12 @@
 ﻿using BusinnesLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace SuperFolio.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         private readonly IMessageService _messageService;

@@ -9,6 +9,7 @@ namespace SuperFolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
     [Route("/[area]/[controller]/[action]")]
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly SignInManager<WriterUser> _signInManager;

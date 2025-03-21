@@ -1,9 +1,11 @@
 ﻿using BusinnesLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SuperFolio.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ExperienceController : Controller
     {
         private readonly IExperienceService _experienceService;
