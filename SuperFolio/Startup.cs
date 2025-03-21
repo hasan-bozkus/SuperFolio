@@ -77,6 +77,9 @@ namespace SuperFolio
             services.AddScoped<ISocialMediaService, SocialMediaManager>();
             services.AddScoped<ISocialMediaDal, EFSocialMediaDal>();
 
+            services.AddScoped<IWriterUserService, WriterUserManager>();
+            services.AddScoped<IWriterUserDal, EFWriterUserDal>();
+
             services.AddScoped<Context>();
 
             services.AddMvc(config =>
@@ -90,7 +93,7 @@ namespace SuperFolio
             services.ConfigureApplicationCookie(options =>
             {
                 options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(100);
                 options.LoginPath = "/Writer/Login/Index";
                 options.AccessDeniedPath = "/ErrorPage/Index";
             });
