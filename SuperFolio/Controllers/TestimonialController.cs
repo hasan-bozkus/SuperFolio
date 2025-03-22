@@ -49,10 +49,9 @@ namespace SuperFolio.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddTestimonial(int id)
+        public IActionResult AddTestimonial()
         {
-            var values = _testimonialService.TGetByID(id);
-            return View(values);
+            return View();
         }
 
         [HttpPost]

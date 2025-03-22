@@ -1,0 +1,13 @@
+﻿* Grafikler (Statik-Dinamik)
+* Rolleme Devamı
+* Deploy
+
+--------------------------
+
+Bonus
+
+* Api ile Projenin Haberleştirilmesi
+* Unit Of Work Design Pattern
+* Elsatic Seacrh
+* Docker
+*Ana Final
