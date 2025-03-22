@@ -14,6 +14,7 @@ namespace DataAccessLayer.Concrete
         override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\hasan;Database=SuperFolioDB; Integrated security=true; Trusted_Connection=True;");
+            //optionsBuilder.UseSqlServer("Server=11.222.333.444\\MSSQLSERVER2022;Database=SuperFolioDB;user=user01;password=123456aA*"); örnketir
         }
 
         public DbSet<About> Abouts { get; set; }

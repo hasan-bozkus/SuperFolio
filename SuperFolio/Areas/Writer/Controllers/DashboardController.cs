@@ -24,7 +24,7 @@ namespace SuperFolio.Areas.Writer.Controllers
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             ViewBag.UserName = values.Name + " " + values.Surname;
 
-            //weather api
+            //weather api - anahtar ezildiği için çalışmamaktadır.
             string api = "dd6e5716727e03344c38dfb6a2419c27";
             string connection = " http://api.openweathermap.org/data/2.5/weather?q=mardin&mode=xml&lang=tr&units=metric&appid=" + api;
             XDocument document = XDocument.Load(connection);
