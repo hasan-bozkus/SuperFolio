@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SuperFolio.Areas.Writer.Models;
@@ -9,6 +10,7 @@ namespace SuperFolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
     [Route("/[area]/[controller]/[action]")]
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
