@@ -1,4 +1,9 @@
 # SuperFolio Portfolyo Projesi (.Net Core 5.0)
+
+# Sertifika
+
+![certificate](https://github.com/hasan-bozkus/SuperFolio/blob/master/SuperFolio/wwwroot/images/Asp.Net%20Core%205.0%20ile%20Ad%C4%B1m%20Ad%C4%B1m%20Web%20Geli%C5%9Ftirme.jpg)
+
 ## Projenin Temel Maksadı
 ###
 SuperFolio Portfolyo Projesi, kişinin yeteneklerini sergileyebileceği, yaptığı işlerle ilgili bilgi verebileceği ve kendisiyle kolayca iletişim kurulmasını sağlayacak, Referanslar ile kişi arasında iletişim kurabileceği yazar panelli bir portfolyo sitesi.
